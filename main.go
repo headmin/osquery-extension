@@ -6,6 +6,7 @@ import (
 	"runtime"
 	"time"
 
+	asdf_installs "github.com/macadmins/osquery-extension/tables/asdf_installs"
 	"github.com/macadmins/osquery-extension/tables/chromeuserprofiles"
 	"github.com/macadmins/osquery-extension/tables/fileline"
 	"github.com/macadmins/osquery-extension/tables/filevaultusers"
@@ -16,6 +17,7 @@ import (
 	"github.com/macadmins/osquery-extension/tables/pendingappleupdates"
 	"github.com/macadmins/osquery-extension/tables/puppet"
 	"github.com/macadmins/osquery-extension/tables/unifiedlog"
+	vscode_plugins "github.com/macadmins/osquery-extension/tables/vscode_plugins"
 	osquery "github.com/osquery/osquery-go"
 	"github.com/osquery/osquery-go/plugin/table"
 )
@@ -67,6 +69,9 @@ func main() {
 		plugins = append(plugins, table.NewPlugin("network_quality", networkquality.NetworkQualityColumns(), networkquality.NetworkQualityGenerate))
 		plugins = append(plugins, table.NewPlugin("pending_apple_updates", pendingappleupdates.PendingAppleUpdatesColumns(), pendingappleupdates.PendingAppleUpdatesGenerate))
 		plugins = append(plugins, table.NewPlugin("macadmins_unified_log", unifiedlog.UnifiedLogColumns(), unifiedlog.UnifiedLogGenerate))
+		plugins = append(plugins, table.NewPlugin("vscode_plugins", vscode_plugins.ExtensionsColumns(), vscode_plugins.ExtensionsGenerate))
+		plugins = append(plugins, table.NewPlugin("asdf_installs", asdf_installs.AsdfInstallsColumns(), asdf_installs.AsdfInstallsGenerate))
+
 	}
 
 	for _, p := range plugins {

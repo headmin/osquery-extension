@@ -38,6 +38,7 @@ build: .pre-build
 	GOOS=linux GOARCH=arm64  go build -o build/linux/${APP_NAME}.arm64.ext
 	GOOS=windows GOARCH=amd64  go build -o build/windows/${APP_NAME}.amd64.ext.exe
 	GOOS=windows GOARCH=arm64  go build -o build/windows/${APP_NAME}.arm64.ext.exe
+	# Add the following line to build the vscode_plugins table
 	/bin/rm build/darwin/${APP_NAME}.amd64.ext
 	/bin/rm build/darwin/${APP_NAME}.arm64.ext
 

@@ -2,6 +2,12 @@ module github.com/macadmins/osquery-extension
 
 go 1.18
 
+replace (
+	github.com/macadmins/osquery-extension/tables/asdf_installs => ./tables/asdf_installs
+	github.com/macadmins/osquery-extension/tables/vscode_plugins => ./tables/vscode_plugins
+
+)
+
 require (
 	github.com/groob/plist v0.0.0-20220217120414-63fa881b19a5
 	github.com/osquery/osquery-go v0.0.0-20220317165851-954ac78f381f
