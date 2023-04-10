@@ -5,6 +5,7 @@ go 1.18
 replace (
 	github.com/macadmins/osquery-extension/tables/asdf_installs => ./tables/asdf_installs
 	github.com/macadmins/osquery-extension/tables/vscode_plugins => ./tables/vscode_plugins
+	github.com/macadmins/osquery-extension/tables/intellij_plugins => ./tables/intellij_plugins
 
 )
 

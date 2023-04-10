@@ -10,6 +10,8 @@ import (
 	"github.com/macadmins/osquery-extension/tables/chromeuserprofiles"
 	"github.com/macadmins/osquery-extension/tables/fileline"
 	"github.com/macadmins/osquery-extension/tables/filevaultusers"
+
+	intellij_plugins "github.com/macadmins/osquery-extension/tables/intellij_plugins"
 	macosprofiles "github.com/macadmins/osquery-extension/tables/macos_profiles"
 	"github.com/macadmins/osquery-extension/tables/mdm"
 	"github.com/macadmins/osquery-extension/tables/munki"
@@ -71,6 +73,7 @@ func main() {
 		plugins = append(plugins, table.NewPlugin("macadmins_unified_log", unifiedlog.UnifiedLogColumns(), unifiedlog.UnifiedLogGenerate))
 		plugins = append(plugins, table.NewPlugin("vscode_plugins", vscode_plugins.ExtensionsColumns(), vscode_plugins.ExtensionsGenerate))
 		plugins = append(plugins, table.NewPlugin("asdf_installs", asdf_installs.AsdfInstallsColumns(), asdf_installs.AsdfInstallsGenerate))
+		plugins = append(plugins, table.NewPlugin("intellij_plugins", intellij_plugins.IntelliJPluginsColumns(), intellij_plugins.IntelliJPluginsGenerate))
 
 	}
 
